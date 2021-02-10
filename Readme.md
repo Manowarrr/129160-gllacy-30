@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Алексей Лыженков](https://up.htmlacademy.ru/htmlcss/30/user/129160).
-* Наставник: [Николай Капитанов].(https://up.htmlacademy.ru/htmlcss/30/user/1688945).
+* Наставник: [Николай Капитанов](https://up.htmlacademy.ru/htmlcss/30/user/1688945).
 
 ---
 
