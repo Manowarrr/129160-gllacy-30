@@ -66,6 +66,7 @@
   --btn-active-shadow: #942718;
   --btn-top-bg: #f26843;
   --btn-bottom-bg: #e74A35;
+  --slider-btn-hover: rgba(255, 255, 255, 0.4);
   --btn-hover-top-bg: rgba(255, 255, 255, 0.2);
   --btn-active-top-bg: rgba(0, 0, 0, 0.07);
   --button-bg: linear-gradient(180deg, var(--btn-top-bg) 0%, var(--btn-bottom-bg) 100%);
@@ -88,10 +89,12 @@
   --popup-bg: #f8f7f4;
   --busket-line: #cacac7;
   --price-shadow: rgba(49, 50, 53, 0.5);
+  --busket-color: #e84d37;
 
   /* inputs */
   --input-border: rgba(178, 178, 178, 0.52);
   --form-bg: #fefefe;
+  --input-focus: rgba(46, 136, 228, 0.52);
 
   /* filters */
   --filter-bg: rgba(255, 255, 255, 0.2);
@@ -144,7 +147,13 @@ a {
   text-decoration: none;
 }
 
-.page-body input[type="text"],
+.page-body button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.page-body input,
 .page-body textarea {
   width: 100%;
   padding: 8px 0 8px 12px;
@@ -152,7 +161,7 @@ a {
   font: inherit;
   font-size: 16px;
   line-height: 20px;
-  color: var(--basic-grey);
+  color: var(--basic-black);
 
   outline: none;
   border: 1px solid var(--input-border);
@@ -163,6 +172,10 @@ a {
 .page-body textarea:hover {
   padding: 7px 0 7px 11px;
   border: 2px solid var(--input-border);
+}
+
+.page-body input:focus {
+  border: 2px solid var(--input-focus);
 }
 
 .page-body input::placeholder,
@@ -209,6 +222,7 @@ a {
   text-shadow: 0 2px 5px var(--btn-slide-text-shadow);
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .btn:hover {
@@ -342,8 +356,15 @@ a {
   background-color: var(--basic-white);
 }
 
-.user-item > a:hover path {
+.search-link:hover path,
+.enter-link:hover path,
+.busket-index:hover path {
   fill: var(--basic-black);
+}
+
+.user-item .busket-catalog {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
 }
 
 .user-navigation svg {
@@ -491,15 +512,6 @@ a {
   display: block;
 }
 
-.user-item:hover > a {
-  color: var(--basic-black);
-  background-color: var(--basic-white);
-}
-
-.user-item:hover > a path {
-  fill: var(--basic-black);
-}
-
 /* login */
 
 .login {
@@ -630,7 +642,7 @@ a {
   content: "";
   position: absolute;
   top: -10px;
-  left: 1px;
+  left: -5px;
 
   width: 11px;
   height: 11px;
@@ -772,6 +784,10 @@ a {
   border-radius: 50%;
 
   cursor: pointer;
+}
+
+.btn-controls:hover {
+  background-color: var(--slider-btn-hover);
 }
 
 .slider-controls .current {
@@ -1251,6 +1267,23 @@ a {
   text-decoration-color: var(--link-bottom-border);
 }
 
+.supplyers-link {
+  position: relative;
+  padding-left: 18px;
+}
+
+.supplyers-link::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 13px;
+
+  background-image: url("../img/icons/heart.svg");
+  background-repeat: no-repeat;
+}
+
 .footer-links li:nth-child(3) {
   padding-left: 18px;
 }
@@ -1466,8 +1499,8 @@ fieldset {
 
 .btn-filter {
   align-self: center;
-  margin-top: 20px;
-  padding: 8px 27px 6px 27px;
+  margin-top: 22px;
+  padding: 10px 27px 8px 27px;
 
   font: inherit;
   font-weight: 500;
@@ -1486,6 +1519,11 @@ fieldset {
 .btn-filter:focus {
   background: var(--basic-white);
   color: var(--basic-black);
+}
+
+.btn-filter:active {
+  box-shadow: inset 0px 2px 1px var(--btn-filter-inset);
+  border: none;
 }
 
 .popularity,
@@ -1510,7 +1548,7 @@ fieldset {
   font-weight: 500;
   color: var(--basic-white);
 
-  background: url("../img/icons/select.svg"), var(--filter-bg);
+  background: url("../img/icons/select.svg") var(--filter-bg);
   background-repeat: no-repeat;
   background-position: 170px 12px;
   appearance: none;
@@ -1523,7 +1561,7 @@ fieldset {
 .popularity:hover,
 .popularity:focus {
   color: var(--basic-black);
-  background: url("../img/icons/select-black.svg"), var(--filter-bg);
+  background: url("../img/icons/select-black.svg") var(--filter-bg);
   background-repeat: no-repeat;
   background-position: 170px 12px;
 }
