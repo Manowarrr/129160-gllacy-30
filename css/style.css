@@ -176,6 +176,7 @@ a {
 
 .page-body input:focus {
   border: 2px solid var(--input-focus);
+  padding: 7px 0 7px 11px;
 }
 
 .page-body input::placeholder,
