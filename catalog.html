@@ -84,7 +84,9 @@
             </a>
 
             <form class="login popup" action="#" method="POST">
+              <label class="visually-hidden" for="login-login">Введите e-mail</label>
               <input id="login-login" type="email" name="login" placeholder="email@example.com">
+              <label class="visually-hidden" for="login-password">Введите пароль</label>
               <input id="login-password" type="password" name="password" placeholder="••••••••">
               <button class="btn btn-login" type="submit">Войти</button>
               <div class="login-links">
@@ -174,7 +176,8 @@
         <!-- sorting -->
         <fieldset>
           <legend>Сортировка:</legend>
-          <select class="popularity" name="sort">
+          <label class="visually-hidden" for="sort">Сортировка по популярности</label>
+          <select class="popularity" name="sort" id="sort">
             <option value="popular">по популярности</option>
             <option value="cheap">сначала недорогие</option>
             <option value="expensive">сначала дорогие</option>
@@ -340,7 +343,11 @@
         </li>
       </ul>
     </main>
+
+    <!-- FOOTER -->
     <footer class="main-footer container">
+
+      <!-- social -->
       <ul class="footer-social">
         <li>
           <a href="#">
@@ -380,6 +387,8 @@
           </a>
         </li>
       </ul>
+
+      <!-- footer links -->
       <ul class="footer-links">
         <li>
           <a class="supplyers-link" href="#">Для поставщиков</a>
